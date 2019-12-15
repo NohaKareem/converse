@@ -15,7 +15,7 @@ class Post extends Model
      * Get image uri
      * @return String
      */
-     public function getAvatarUriAttribute() {
+     public function getImageUriAttribute() {
         return Storage::url($this->image);
     }
 

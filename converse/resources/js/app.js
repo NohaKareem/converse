@@ -6,6 +6,27 @@
 
 require('./bootstrap');
 
+axios.get('/api/get-posts')
+    .then(function(response){
+        const searchResults = response.data;
+        console.log("in axios");
+        console.log(searchResults);
+        const postsCon = document.querySelector('#searchPostsCon');
+        postsCon.innerHTML = ''; 
+
+        for(let i = 0; i < searchResults.length; i++) {
+            const item  = 
+            '<div>' + 
+                '<div class="searchResultImage" style="background:url(' + searchResults[i]['imageUri'] + ')"></div>' +
+                    '<h4>' + searchResults[i]['title'] + '</h4>' +
+            '</div>';
+
+            postsCon.innerHTML += item;
+        }
+    }).catch(function(error) {
+        alert(error);
+    });
+    
 window.Vue = require('vue');
 
 /**
@@ -30,22 +51,3 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 const app = new Vue({
     el: '#app',
 });
-
-axios.get('/api/get-posts')
-    .then(function(response){
-        const searchResults = response.data;
-        const postsCon = document.querySelector('#searchPostsCon');
-        postsCon.innerHTML = ''; 
-
-        for(let i = 0; i < searchResults.length; i++) {
-            const item  = 
-            '<div>' + 
-                '<div class="searchResultImage" style="background:url(' + searchResults[i]['imageUri'] + ')"></div>' +
-                    '<h4>' + searchResults[i]['title'] + '</h4>' +
-            '</div>';
-
-            postsCon.innerHTML += item;
-        }
-    }).catch(function(error) {
-        alert(error);
-    });

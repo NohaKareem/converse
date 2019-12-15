@@ -49457,6 +49457,20 @@ module.exports = function(module) {
  */
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
+axios.get('/api/get-posts').then(function (response) {
+  var searchResults = response.data;
+  console.log("in axios");
+  console.log(searchResults);
+  var postsCon = document.querySelector('#searchPostsCon');
+  postsCon.innerHTML = '';
+
+  for (var i = 0; i < searchResults.length; i++) {
+    var item = '<div>' + '<div class="searchResultImage" style="background:url(' + searchResults[i]['imageUri'] + ')"></div>' + '<h4>' + searchResults[i]['title'] + '</h4>' + '</div>';
+    postsCon.innerHTML += item;
+  }
+})["catch"](function (error) {
+  alert(error);
+});
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 /**
  * The following block of code may be used to automatically register your
@@ -49477,18 +49491,6 @@ Vue.component('example-component', __webpack_require__(/*! ./components/ExampleC
 
 var app = new Vue({
   el: '#app'
-});
-axios.get('/api/get-posts').then(function (response) {
-  var searchResults = response.data;
-  var postsCon = document.querySelector('#searchPostsCon');
-  postsCon.innerHTML = '';
-
-  for (var i = 0; i < searchResults.length; i++) {
-    var item = '<div>' + '<div class="searchResultImage" style="background:url(' + searchResults[i]['imageUri'] + ')"></div>' + '<h4>' + searchResults[i]['title'] + '</h4>' + '</div>';
-    postsCon.innerHTML += item;
-  }
-})["catch"](function (error) {
-  alert(error);
 });
 
 /***/ }),

@@ -12,7 +12,7 @@ class PostController extends Controller {
      * @return Illuminate\Http\Response
      */
     public function index() {
-        $posts = Post::all()->map->only(['title', 'imageUri']);
+        $posts = Post::all()->map->only(['title', 'imageUri']);//~
         return response()->json($posts, 200); 
     }
 }
