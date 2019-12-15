@@ -1,0 +1,62 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+$spacing: 10px;
+
+#feedView {
+    margin-top: $spacing;
+}
+
+// ~
+#messageView {
+    background-color: blue;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: $spacing;
+}
+
+#friendsView {
+    background-color: green;
+    margin-top: $spacing;
+}
+
+#searchCon {
+    text-align: center;
+}
+
+.inputForm {
+    input {
+        margin-bottom: $spacing;
+        margin-top: $spacing;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    #feedView {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        grid-column-gap: $spacing;
+    }
+
+    #friendsView {
+        margin-top: 0;
+    }
+}
+
+#postsCon {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-column-gap: $spacing;
+    padding: 5px;
+    margin: $spacing;
+    .post {
+        background-color: white;
+    }
+}
