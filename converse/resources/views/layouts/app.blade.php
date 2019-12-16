@@ -98,6 +98,7 @@
     
     <script>
     
+    // live search using fetch API
     function liveSearch(e){
         var searchStr = e.currentTarget.value;
         fetch('/api/get-posts/?searchStr='  + searchStr)
@@ -125,38 +126,6 @@
 			console.log(err);
 		});
     }
-
-    // function liveSearchAxios(e) {
-    //         var searchStr = e.currentTarget.value;
-    //         console.log(searchStr);
-
-    //         // POST method to send search query
-    //         axios.post('/api/get-posts/?searchStr=' + searchStr)
-    //             .then(
-    //                 function(response) { 
-    //                     console.log(response);
-    //                     const searchResults = response.data;
-    //                     console.log(searchResults);
-    //                     const postsCon = document.querySelector('#searchPostsCon');
-    //                     postsCon.innerHTML = ''; 
-                        
-    //                     for(let i = 0; i < searchResults.length; i++) {
-    //                         console.log("image")
-    //                         console.log(searchResults[i]['image'])
-    //                         const postItem  = 
-    //                         '<a href="/posts/' + searchResults[i]['id'] + '">' +
-    //                             '<div>' + 
-    //                                 '<div class="searchResultImage" style="background:url(' + searchResults[i]['imageUri'] + ')"></div>' +
-    //                                     '<p>' + searchResults[i]['title'] + '</p>' +
-    //                             '</div>' + 
-    //                         '</a>';
-    //                         postsCon.innerHTML += postItem;
-    //                     }
-    //             }).catch(function(error) {
-    //                 console.log(error);
-    //         });
-    //     }
-
     </script>
 
 </body>

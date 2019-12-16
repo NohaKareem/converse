@@ -49458,34 +49458,8 @@ module.exports = function(module) {
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 (function () {
-  "use strict";
-
-  var searchBar = document.querySelector("#navSearchBar"); // add key up event listener for live search results
-
-  searchBar.addEventListener("keyup", liveSearch);
-
-  function liveSearch(e) {
-    console.log("in live search");
-    var searchStr = e.currentTarget.value;
-    console.log(searchStr); // POST method to send search query
-
-    axios.post('/api/get-posts/?searchStr=' + searchStr).then(function (response) {
-      var searchResults = response.data;
-      console.log(searchResults);
-      var postsCon = document.querySelector('#searchPostsCon');
-      postsCon.innerHTML = '';
-
-      for (var i = 0; i < searchResults.length; i++) {
-        console.log("image");
-        console.log(searchResults[i]['image']);
-        var postItem = '<a href="/posts/' + searchResults[i]['id'] + '">' + '<div>' + '<div class="searchResultImage" style="background:url(' + searchResults[i]['image'] + ')"></div>' + '<p>' + searchResults[i]['title'] + '</p>' + '</div>' + '</a>';
-        postsCon.innerHTML += postItem;
-      }
-    })["catch"](function (error) {
-      console.log(error);
-    });
-  } // display posts 
-
+  "use strict"; // live search in app.blade.php
+  // display posts 
 
   function loadPosts() {
     axios.get('/api/get-posts').then(function (response) {
