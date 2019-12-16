@@ -9,12 +9,13 @@
                     <!-- <img class="postImg" src="{{ $post->image }}"> -->
                     <h1 class="postTitle">{{ $post->title }} </h1>
                     <p class="postText">{{ $post->text }} </p>
-                <form action="/posts/{{ $post->id }}" method="POST">
-                    @method('DELETE')
-                    @csrf
-                    <button class="btn btn-outline-danger btn-sm" type="submit">delete</button>
-                </form>
 
+                    <form action="/posts/{{ $post->id }}" method="POST">
+                        @method('DELETE')
+                        @csrf
+                        <button class="btn btn-outline-danger btn-sm" type="submit">delete</button>
+                    </form>
+            
                 <form action="/comments" method="POST">
                     @csrf
                     <label for="comment" class="control-label sr-only">Post comment</label>

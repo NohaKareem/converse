@@ -32,7 +32,7 @@ class CommentController extends Controller {
             'post_id' => $request->input('post_id')
         ]);
         
-        return back();
+        return redirect('/posts');
     }
 
     /**
@@ -46,7 +46,7 @@ class CommentController extends Controller {
         if (auth()->id() == $comment->user_id) {
             // redirect to main page
             $comment->delete();
-            return back(); //~
-        }
+           return redirect('/posts');
+    }
     }
 }
