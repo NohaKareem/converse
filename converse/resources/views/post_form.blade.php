@@ -33,8 +33,8 @@
                 <input type="file" name="image" id="image" class="form-control" placeholder="image">
             </div>
             
-            <div class="form-group">
-                <button type="submit" class="btn btn-outline-primary btn-block">
+            <div class="form-group buttonCon">
+                <button type="submit" class="btn btn-outline-primary btn-blocks">
                    Add Post
                 </button>
             </div>

@@ -11369,6 +11369,11 @@ a.text-dark:focus {
   font-weight: bold;
 }
 
+.navbar .navLinks {
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
 #feedView {
   margin-top: 10px;
 }
@@ -11472,6 +11477,17 @@ a.text-dark:focus {
   background-size: cover !important;
   background-position: center !important;
   background-repeat: no-repeat !important;
+}
+
+.buttonCon {
+  margin: 0 auto;
+  text-align: center;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
 }
 
 .actionButton,

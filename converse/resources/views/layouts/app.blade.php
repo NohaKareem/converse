@@ -42,6 +42,9 @@
                         </li>
                     </form>
                 </div>
+                
+                <div class="navLinks"><a href="/posts"> Posts </a></div>
+                <div class="navLinks"><a href="/users"> Users </a></div>
 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -82,9 +85,6 @@
                                         @csrf
                                     </form>
                                 </div>
-
-                                <a href="/posts"> Posts </a>
-                                <a href="/users"> Users </a>
                             </li>
                         @endguest
                     </ul>
