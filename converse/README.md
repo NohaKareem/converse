@@ -13,7 +13,7 @@ This is a social web app built for courses 6000, 6001 and 6005 where users could
 * ```php artisan db:seed``` 
 
 ## Axios code location
-* in resources/js/app.js
+* in app.blade.php (file in resources/js/app.js has a copy of the method, however event did not connect except with an inline registration in app.blade.php)
 
 ## Note
 * Reset password links are sent to .log file found in storage/logs path

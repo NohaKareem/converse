@@ -36,7 +36,7 @@
                         <li id="searchInNav">
                             <div class="form-inline">
                                 <label for="search" class="control-label sr-only"></label>
-                                <input type="text" name="search" id="navSearchBar" class="form-control mr-sm-2" placeholder="Search for post topic">
+                                <input type="text" name="search" id="navSearchBar" class="form-control mr-sm-2" placeholder="Search for post topic" onkeyup="liveSearch(event);">
                             </div>
                         </li>
                     </form>
@@ -95,5 +95,43 @@
             @yield('content')
         </main>
     </div>
+    
+    <script>
+    
+    function liveSearch(e) {
+            console.log("in live search");
+            var searchStr = e.currentTarget.value;
+            console.log(searchStr);
+
+            // POST method to send search query
+            axios.post('/api/get-posts/?searchStr=' + searchStr)
+                .then(
+                    function(response) { 
+                        const searchResults = response.data;
+                        console.log(searchResults);
+                        const postsCon = document.querySelector('#searchPostsCon');
+                        postsCon.innerHTML = ''; 
+                        
+                        for(let i = 0; i < searchResults.length; i++) {
+                            console.log("image")
+                            console.log(searchResults[i]['image'])
+                            const postItem  = 
+                            '<a href="/posts/' + searchResults[i]['id'] + '">' +
+                                '<div>' + 
+                                    '<div class="searchResultImage" style="background:url(' + searchResults[i]['image'] + ')"></div>' +
+                                        '<p>' + searchResults[i]['title'] + '</p>' +
+                                '</div>' + 
+                            '</a>';
+                            postsCon.innerHTML += postItem;
+                        }
+                }).catch(function(error) {
+                    console.log(error);
+            });
+        }
+        // var searchBar = document.querySelector("#navSearchBar");
+        // searchBar.onkeyup = liveSearch;
+
+    </script>
+
 </body>
 </html>
