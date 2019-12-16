@@ -3,6 +3,7 @@
 @section('content')
     <!-- Display each user's data -->
     <div id="container"> 
+        <div class="usersCon">
             @foreach(App\User::all() as $user) 
                 <div class="col-md-3 userCon"> 
                     <div class="userInfo">
@@ -15,6 +16,7 @@
                     </div>
                 </div>
             @endforeach
+        </div>
 
             <form action="/posts" method="GET" class="col-md-2">
                 <button type="submit" class="btn btn-outline-primary btn-block">

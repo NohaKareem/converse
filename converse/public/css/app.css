@@ -11360,6 +11360,15 @@ a.text-dark:focus {
   display: none;
 }
 
+.navbar {
+  background-color: #ffd500 !important;
+}
+
+.navbar .navbar-brand {
+  color: #5500ff !important;
+  font-weight: bold;
+}
+
 #feedView {
   margin-top: 10px;
 }
@@ -11389,10 +11398,6 @@ a.text-dark:focus {
   margin-top: 10px;
 }
 
-#searchPostsCon {
-  margin-top: -10px;
-}
-
 @media screen and (min-width: 768px) {
   #feedView {
     display: grid;
@@ -11408,19 +11413,56 @@ a.text-dark:focus {
 .postsCon {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  grid-column-gap: 10px;
+  grid-column-gap: 30px;
   padding: 5px;
   margin: 10px;
 }
 
-.postsCon .post {
+.usersCon {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-flex: 1;
+          flex: 1 0 200px;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row;
+  flex-wrap: wrap;
+  margin: 20px;
+}
+
+.userCon {
+  min-width: 200px;
+}
+
+.post,
+.userCon {
   background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 2px 2px 2px 1px rgba(200, 200, 200, 0.5);
+}
+
+.post .postImage,
+.userCon .postImage {
+  height: 150px !important;
+  width: 150px !important;
+  border-radius: 5px;
+  border-top-left-radius: 50%;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+}
+
+.postCon {
+  margin: 0 auto;
 }
 
 #searchPostsCon {
+  margin-top: -10px;
   margin-left: 20px;
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-column-gap: 10px;
 }
 
 #searchPostsCon .searchResultImage {
@@ -11436,5 +11478,23 @@ a.text-dark:focus {
 .postText,
 #commentText {
   margin-top: 10px;
+}
+
+.btn-outline-primary {
+  border-color: #5500ff !important;
+  color: #5500ff !important;
+}
+
+.btn-outline-primary:hover {
+  background-color: #5500ff !important;
+  color: white !important;
+}
+
+a {
+  color: #5500ff;
+}
+
+a:hover {
+  color: #5500ff;
 }
 

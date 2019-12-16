@@ -10,24 +10,50 @@ var searchBar = document.querySelector("#search");
 
 function liveSearch(e) {
     console.log("in live search");
-    console.log(e);
+    var searchStr = e.currentTarget.value;
+    console.log(searchStr);
+
+    // POST method to send search query
+    axios.post('/api/get-posts/?searchStr=' + searchStr)
+        .then(
+            function(response) { 
+                const searchResults = response.data;
+                console.log(searchResults);
+                const postsCon = document.querySelector('#searchPostsCon');
+                postsCon.innerHTML = ''; 
+                
+                for(let i = 0; i < searchResults.length; i++) {
+                    console.log("image")
+                    console.log(searchResults[i]['image'])
+                    const item  = 
+                    '<a href="/posts/' + searchResults[i]['id'] + '">' +
+                        '<div>' + 
+                            '<div class="searchResultImage" style="background:url(' + searchResults[i]['image'] + ')"></div>' +
+                                '<p>' + searchResults[i]['title'] + '</p>' +
+                        '</div>' + 
+                    '</a>';
+                    postsCon.innerHTML += item;
+                }
+        }).catch(function(error) {
+            console.log(error);
+    });
 }
-    // display posts ~
+    // display posts 
     axios.get('/api/get-posts')
-        .then(function(response){
+        .then(function(response) { 
             const searchResults = response.data;
             console.log(searchResults);
             console.log(response);
             const postsCon = document.querySelector('#searchPostsCon');
-            postsCon.innerHTML = ''; 
-            
+            postsCon.innerHTML = '<div class="postsCon">'; 
+
             for(let i = 0; i < searchResults.length; i++) {
                 console.log("image")
                 console.log(searchResults[i]['image'])
                 const item  = 
                 '<a href="/posts/' + searchResults[i]['id'] + '">' +
-                    '<div>' + 
-                        '<div class="searchResultImage" style="background:url(' + searchResults[i]['image'] + ')"></div>' +
+                    '<div class="post">' + 
+                        '<div class="postImage" style="background:url(' + searchResults[i]['imageUri'] + ')"></div>' +
                             '<p>' + searchResults[i]['title'] + '</p>' +
                     '</div>' + 
                 '</a>';
@@ -44,6 +70,7 @@ function liveSearch(e) {
             //     '</a>';
                 postsCon.innerHTML += item;
             }
+            postsCon.innerHTML += '</div>';
         }).catch(function(error) {
             console.log(error);
     });

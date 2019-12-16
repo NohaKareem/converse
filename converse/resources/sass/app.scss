@@ -8,9 +8,20 @@
 @import '~bootstrap/scss/bootstrap';
 
 $spacing: 10px;
+$yellow: #ffd500;
+$blue: #5500ff;
+$mintGreen: #00ffd5;
 
 .hidden {
     display: none;
+}
+
+.navbar {
+    background-color: $yellow !important;
+    .navbar-brand {
+        color: $blue !important;
+        font-weight: bold;
+    }
 }
 
 #feedView {
@@ -42,10 +53,6 @@ $spacing: 10px;
     }
 }
 
-#searchPostsCon {
-    margin-top: -10px;
-}
-
 @media screen and (min-width: 768px) {
     #feedView {
         display: grid;
@@ -61,21 +68,54 @@ $spacing: 10px;
 .postsCon {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    grid-column-gap: $spacing;
+    grid-column-gap: $spacing * 3;
     padding: 5px;
     margin: $spacing;
+    // margin: 0 auto;
+}
 
-    .post {
-        background-color: white;
+.usersCon {
+    display: flex;
+    // grid-template-columns: repeat(2, minmax(200px, 1fr));
+    // grid-column-gap: $spacing;
+    flex: 1 0 200px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: $spacing * 2;
+}
+.userCon {
+    min-width: 200px;
+}
+
+.post, .userCon {
+    background-color: white;
+    border-radius: 10px;
+    padding: $spacing * 2;
+    box-shadow: 2px 2px 2px 1px rgba(200, 200, 200, 0.5);
+
+    .postImage {
+        height: 150px !important;
+        width: 150px !important;
+        border-radius: 5px;
+        border-top-left-radius: 50%;
+        // border-top-right-radius: 40px;
+        background-size: cover !important;
+        background-position: center !important;
+        background-repeat: no-repeat !important;
     }
 }
 
+.postCon {
+    margin: 0 auto;
+}
+
 #searchPostsCon {
+    margin-top: -10px;
     margin-left: $spacing * 2;
 
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
-
+    grid-column-gap: $spacing;
     .searchResultImage {
         height: 100px !important;
         width: 100px !important;
@@ -89,4 +129,22 @@ $spacing: 10px;
 
 .actionButton, .postText, #commentText {
     margin-top: $spacing;
+}
+
+.btn-outline-primary {
+    border-color: $blue !important;
+    color: $blue !important;
+}
+
+.btn-outline-primary:hover {
+    background-color: $blue !important;
+    color: white !important;
+}
+
+a {
+    color: $blue;
+}
+
+a:hover {
+    color: $blue;
 }
