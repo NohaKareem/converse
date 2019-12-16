@@ -7,6 +7,7 @@
             @foreach($posts as $post)
                 <div class="post">
                     <!-- <img class="postImg" src="{{ $post->image }}"> -->
+                    <!-- <div class="postImg" style="background:url(' {{ $post->image }} + ')"></div> -->
                     <h1 class="postTitle">{{ $post->title }} </h1>
                     <p class="postText">{{ $post->text }} </p>
                     <p class="postAuthor">Author:  <a href="/users/{{$post->user_id}}"> {{ App\User::find($post->user_id)->first_name }} {{ App\User::find($post->user_id)->last_name }}</a> </p>
