@@ -108,12 +108,11 @@
 			.then(function(searchResults){
                 const postsCon = document.querySelector('#searchPostsCon');
                 postsCon.innerHTML = ''; 
-                
                 for(let i = 0; i < searchResults.length; i++) {
                     const postItem  = 
                     '<a href="/posts/' + searchResults[i]['id'] + '">' +
                         '<div>' + 
-                            '<div class="searchResultImage" style="background:url(' + searchResults[i]['imageUri'] + ')"></div>' +
+                            '<div class="searchResultImage" style="background:url(' + searchResults[i]['image'] + ')"></div>' +
                                 '<p>' + searchResults[i]['title'] + '</p>' +
                         '</div>' + 
                     '</a>';
