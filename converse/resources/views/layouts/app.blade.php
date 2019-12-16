@@ -38,8 +38,6 @@
                             <div class="form-inline">
                                 <label for="search" class="control-label sr-only"></label>
                                 <input type="text" name="search" id="search" class="form-control mr-sm-2" placeholder="Search for post topic">
-                                <!-- <button class="btn btn-success" type="submit">search</button> --> 
-                                <!-- ~ -->
                             </div>
                         </li>
                     </form>
