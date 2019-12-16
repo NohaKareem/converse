@@ -9,12 +9,15 @@
                     <!-- <img class="postImg" src="{{ $post->image }}"> -->
                     <h1 class="postTitle">{{ $post->title }} </h1>
                     <p class="postText">{{ $post->text }} </p>
+                    <p class="postAuthor">Author:  <a href="/users/{{$post->user_id}}"> {{ App\User::find($post->user_id)->first_name }} {{ App\User::find($post->user_id)->last_name }}</a> </p>
 
-                    <form action="/posts/{{ $post->id }}" method="POST">
-                        @method('DELETE')
-                        @csrf
-                        <button class="btn btn-outline-danger btn-sm" type="submit">delete post</button>
-                    </form>
+                    @if(auth()->id() == $post->user_id)
+                        <form action="/posts/{{ $post->id }}" method="POST">
+                            @method('DELETE')
+                            @csrf
+                            <button class="btn btn-outline-danger btn-sm" type="submit">delete post</button>
+                        </form>
+                    @endif
                     
                     <div class="commentSection">
                         <h2>Comments</h2>
