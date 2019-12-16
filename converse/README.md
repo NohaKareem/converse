@@ -21,7 +21,6 @@ This is a texting web app built for courses 6000, 6001 and 6005.
 * Reset password links are sent to .log file found in storage/logs path
 
 ## Relationships
-* 1:1 user:profile 
 * 1:m user:posts
 * 1:m post:comments
 * 1:m user:comments
