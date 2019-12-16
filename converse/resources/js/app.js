@@ -21,11 +21,14 @@ function liveSearch(e) {
             postsCon.innerHTML = ''; 
 
             for(let i = 0; i < searchResults.length; i++) {
+                console.log('<a href="/posts/' + searchResults[i]['id'] + '">')
                 const item  = 
-                '<div>' + 
-                    '<div class="searchResultImage" style="background:url(' + searchResults[i]['imageUri'] + ')"></div>' +
-                        '<p>' + searchResults[i]['title'] + '</p>' +
-                '</div>';
+                '<a href="/posts/' + searchResults[i]['id'] + '">' +
+                    '<div>' + 
+                        '<div class="searchResultImage" style="background:url(' + searchResults[i]['imageUri'] + ')"></div>' +
+                            '<p>' + searchResults[i]['title'] + '</p>' +
+                    '</div>' + 
+                '</a>';
                 postsCon.innerHTML += item;
             }
         }).catch(function(error) {

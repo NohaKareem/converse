@@ -12,7 +12,8 @@ class PostController extends Controller {
      * @return Illuminate\Http\Response
      */
     public function index() {
-        $posts = Post::all()->map->only(['title', 'imageUri']); // return all
+        // albeit not ideal, id is returned as a response to have links to view each post separately
+        $posts = Post::all()->map->only(['title', 'imageUri', 'id']); // return all
         // $posts = Post::where('title', "Hello")->get()->only(['title', 'imageUri']);//~
         // $posts = Post::where('title', 'LIKE', "%hello%")->get()->only(['title', 'imageUri']);//~
         // dump($posts);

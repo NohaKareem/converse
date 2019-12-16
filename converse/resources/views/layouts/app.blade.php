@@ -82,6 +82,9 @@
                                         @csrf
                                     </form>
                                 </div>
+
+                                <a href="/posts"> Posts </a>
+                                <a href="/users"> Users </a>
                             </li>
                         @endguest
                     </ul>

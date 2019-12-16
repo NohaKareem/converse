@@ -49472,7 +49472,8 @@ axios.get('/api/get-posts').then(function (response) {
   postsCon.innerHTML = '';
 
   for (var i = 0; i < searchResults.length; i++) {
-    var item = '<div>' + '<div class="searchResultImage" style="background:url(' + searchResults[i]['imageUri'] + ')"></div>' + '<p>' + searchResults[i]['title'] + '</p>' + '</div>';
+    console.log('<a href="/posts/' + searchResults[i]['id'] + '">');
+    var item = '<a href="/posts/' + searchResults[i]['id'] + '">' + '<div>' + '<div class="searchResultImage" style="background:url(' + searchResults[i]['imageUri'] + ')"></div>' + '<p>' + searchResults[i]['title'] + '</p>' + '</div>' + '</a>';
     postsCon.innerHTML += item;
   }
 })["catch"](function (error) {

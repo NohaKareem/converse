@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-    
     <p id="searchPostsCon"></p>
 
     <!-- Display all posts -->

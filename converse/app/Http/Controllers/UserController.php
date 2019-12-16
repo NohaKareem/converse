@@ -6,6 +6,13 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 class UserController extends Controller {
+    /**  
+     * Restrict access to entire controller to logged in users only
+     * */ 
+    public function __construct() {
+        $this->middleware('auth');
+    }
+
      /**
      * Display a listing of users.
      *
