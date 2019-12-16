@@ -57,4 +57,28 @@ class PostController extends Controller {
         return redirect('/posts');
     }
 
+    /**
+     * Display the specified post.
+     * ~Post sent to view as an array of posts, to utilize the same blade file used for search results, for more DRY code.
+     * @param  \App\Post  $post
+     * @return \Illuminate\Http\Response
+     */
+    public function show(Post $post) {
+        return view('post', ['posts' => [$post]]);
+    }
+
+    /**
+     * Remove the specified post from storage.
+     *
+     * @param  \App\Post  $post
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy(Post $post) {
+        // ~check current user is authorized to delete
+        if (auth()->id == $post.user_id) {
+            // redirect to main page
+            $post->delete();
+            return redirect('/posts');
+        }
+    }
 }

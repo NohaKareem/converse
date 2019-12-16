@@ -1,13 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
-    
-    <p id="searchPostsCon"></p>
-
     <!-- Display all posts -->
     <div id="container"> 
         <div class="postsCon">
-            @foreach(App\Post::all() as $post)
+            @foreach($posts as $post)
                 <div class="post">
                     <!-- <img class="postImg" src="{{ $post->image }}"> -->
                     <h1 class="postTitle">{{ $post->title }} </h1>
