@@ -34,5 +34,5 @@ Route::get("/post_form", function () {
 });
 
 // Comments   
-Route::post('/comments', "CommentController@store")->name("comment.create"); // make comment
+Route::post('/comments', "CommentController@store"); // make comment
 Route::delete('/comments/{comment}', "CommentController@destroy"); // delete comment

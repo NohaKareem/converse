@@ -13,16 +13,12 @@ class PostController extends Controller {
      */
     public function index() {
         // albeit not ideal, id is returned as a response to have links to view each post separately
-        // $posts = Post::all()->map->only(['title', 'imageUri', 'id']); // return all
-        
-        $posts = Post::where('text', 'LIKE', "%posts%")->get();
-        
-        // $posts = Post::where('name', $request->keywords)->get();
-        // $posts = Post::where('title', "Hello")->get()->only(['title', 'imageUri']);//~
-        // $posts = Post::where('title', 'LIKE', "%hello%")->get()->only(['title', 'imageUri']);//~
-        // dump($posts);
-    // ::where('text', 'LIKE', "%{ $request->search }%");
+        $posts = Post::all()->map->only(['title', 'imageUri', 'id']); // return all
+        return response()->json($posts, 200); 
+    }
 
+    public function find(Request $request) {
+        $posts = Post::where('text', 'LIKE', "% {{ $request->searchStr }} %")->get();
         return response()->json($posts, 200); 
     }
 

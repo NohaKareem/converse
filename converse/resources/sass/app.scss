@@ -9,6 +9,10 @@
 
 $spacing: 10px;
 
+.hidden {
+    display: none;
+}
+
 #feedView {
     margin-top: $spacing;
 }
@@ -83,6 +87,6 @@ $spacing: 10px;
     }
 }
 
-.actionButton, .postText, #commentBox {
+.actionButton, .postText, #commentText {
     margin-top: $spacing;
 }

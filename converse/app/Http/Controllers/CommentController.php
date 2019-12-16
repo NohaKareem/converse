@@ -1,10 +1,10 @@
 <?php
 
-use App\Comment;
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use App\Comment;
 
 class CommentController extends Controller {
 
@@ -20,12 +20,11 @@ class CommentController extends Controller {
         $validator =  Validator::make($request->all(), [
             'commentText' => 'required|max:255' 
           ]);
-
         // ~stay in page to show errors if any
         if ($validator->fails()) {  
             return redirect('/')->withInput()->withErrors($validator);
         }
-
+        dump($request->input('post_id'));
         Comment::Create([
             'commentText' => $request->input('commentText'),
             'user_id' => auth()->id(), 

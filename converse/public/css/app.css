@@ -11356,6 +11356,10 @@ a.text-dark:focus {
   }
 }
 
+.hidden {
+  display: none;
+}
+
 #feedView {
   margin-top: 10px;
 }
@@ -11430,7 +11434,7 @@ a.text-dark:focus {
 
 .actionButton,
 .postText,
-#commentBox {
+#commentText {
   margin-top: 10px;
 }
 

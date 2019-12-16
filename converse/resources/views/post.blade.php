@@ -18,9 +18,10 @@
             
                 <form action="/comments" method="POST">
                     @csrf
-                    <label for="comment" class="control-label sr-only">Post comment</label>
-                    <textarea rows="10" name="comment" id="commentBox" class="form-control" placeholder="comment"></textarea>  
-
+                    <label for="commentText" class="control-label sr-only">Post comment</label>
+                    <textarea rows="10" name="commentText" id="commentText" class="form-control" placeholder="comment"></textarea>  
+                    <!-- pass post id -->
+                    <input rows="10" name="post_id" id="post_id" class="form-control hidden" type="text" placeholder="post id" value="{{$post->id}}">
                     <button class="btn btn-outline-success btn-sm actionButton" type="submit">post comment</button>
                 </form>
             </div>
