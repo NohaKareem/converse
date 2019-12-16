@@ -49468,12 +49468,23 @@ function liveSearch(e) {
 axios.get('/api/get-posts').then(function (response) {
   var searchResults = response.data;
   console.log(searchResults);
+  console.log(response);
   var postsCon = document.querySelector('#searchPostsCon');
   postsCon.innerHTML = '';
 
   for (var i = 0; i < searchResults.length; i++) {
-    console.log('<a href="/posts/' + searchResults[i]['id'] + '">');
-    var item = '<a href="/posts/' + searchResults[i]['id'] + '">' + '<div>' + '<div class="searchResultImage" style="background:url(' + searchResults[i]['imageUri'] + ')"></div>' + '<p>' + searchResults[i]['title'] + '</p>' + '</div>' + '</a>';
+    console.log("image");
+    console.log(searchResults[i]['image']);
+    var item = '<a href="/posts/' + searchResults[i]['id'] + '">' + '<div>' + '<div class="searchResultImage" style="background:url(' + searchResults[i]['image'] + ')"></div>' + '<p>' + searchResults[i]['title'] + '</p>' + '</div>' + '</a>'; // for(let i = 0; i < searchResults.length; i++) {
+    //     console.log('<a href="/posts/' + searchResults[i]['id'] + '">')
+    //     const item  = 
+    //     '<a href="/posts/' + searchResults[i]['id'] + '">' +
+    //         '<div>' + 
+    //             '<div class="searchResultImage" style="background:url(' + searchResults[i]['imageUri'] + ')"></div>' +
+    //                 '<p>' + searchResults[i]['title'] + '</p>' +
+    //         '</div>' + 
+    //     '</a>';
+
     postsCon.innerHTML += item;
   }
 })["catch"](function (error) {

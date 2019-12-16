@@ -17,18 +17,31 @@ function liveSearch(e) {
         .then(function(response){
             const searchResults = response.data;
             console.log(searchResults);
+            console.log(response);
             const postsCon = document.querySelector('#searchPostsCon');
             postsCon.innerHTML = ''; 
-
+            
             for(let i = 0; i < searchResults.length; i++) {
-                console.log('<a href="/posts/' + searchResults[i]['id'] + '">')
+                console.log("image")
+                console.log(searchResults[i]['image'])
                 const item  = 
                 '<a href="/posts/' + searchResults[i]['id'] + '">' +
                     '<div>' + 
-                        '<div class="searchResultImage" style="background:url(' + searchResults[i]['imageUri'] + ')"></div>' +
+                        '<div class="searchResultImage" style="background:url(' + searchResults[i]['image'] + ')"></div>' +
                             '<p>' + searchResults[i]['title'] + '</p>' +
                     '</div>' + 
                 '</a>';
+
+                   
+            // for(let i = 0; i < searchResults.length; i++) {
+            //     console.log('<a href="/posts/' + searchResults[i]['id'] + '">')
+            //     const item  = 
+            //     '<a href="/posts/' + searchResults[i]['id'] + '">' +
+            //         '<div>' + 
+            //             '<div class="searchResultImage" style="background:url(' + searchResults[i]['imageUri'] + ')"></div>' +
+            //                 '<p>' + searchResults[i]['title'] + '</p>' +
+            //         '</div>' + 
+            //     '</a>';
                 postsCon.innerHTML += item;
             }
         }).catch(function(error) {
