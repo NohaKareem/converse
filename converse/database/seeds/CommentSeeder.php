@@ -11,7 +11,7 @@ class CommentSeeder extends Seeder
      */
     private $comments = [
         ['commentText' => 'That sounds great!', 'user_id' => '1', 'post_id' => '1'],
-        ['commentText' => 'Awesome!', 'user_id' => '1', 'post_id' => '2'],
+        ['commentText' => 'Awesome!', 'user_id' => '1', 'post_id' => '2']
     ];
 
     /**

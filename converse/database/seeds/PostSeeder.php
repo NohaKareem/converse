@@ -22,6 +22,13 @@ class PostSeeder extends Seeder
      */
     public function run()
     {
-        //
+        foreach ($this->posts as $post) {
+            Post::firstOrCreate([
+              'title' => $post['title'],
+              'text' => $post['text'], 
+              'user_id' => $post['user_id'], 
+              'image' => $post['image']
+            ]);
+          }
     }
 }
