@@ -8,7 +8,9 @@ require('./bootstrap');
 (function() {
 	"use strict";
     var searchBar = document.querySelector("#navSearchBar");
-    console.log(searchBar);
+    
+    // add key up event listener for live search results
+    searchBar.addEventListener("keyup", liveSearch);
 
     function liveSearch(e) {
         console.log("in live search");
@@ -27,14 +29,14 @@ require('./bootstrap');
                     for(let i = 0; i < searchResults.length; i++) {
                         console.log("image")
                         console.log(searchResults[i]['image'])
-                        const item  = 
+                        const postItem  = 
                         '<a href="/posts/' + searchResults[i]['id'] + '">' +
                             '<div>' + 
                                 '<div class="searchResultImage" style="background:url(' + searchResults[i]['image'] + ')"></div>' +
                                     '<p>' + searchResults[i]['title'] + '</p>' +
                             '</div>' + 
                         '</a>';
-                        postsCon.innerHTML += item;
+                        postsCon.innerHTML += postItem;
                     }
             }).catch(function(error) {
                 console.log(error);
@@ -68,8 +70,6 @@ require('./bootstrap');
     }
     loadPosts();
 
-    // add key up event listener for live search results
-    searchBar.addEventListener("keyup", liveSearch, false);
 
 })();
 

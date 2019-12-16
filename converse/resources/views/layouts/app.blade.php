@@ -31,7 +31,7 @@
                 <!-- search feature -->
                 <!-- bootstrap navbar search styling https://getbootstrap.com/docs/4.0/components/navbar/ -->
                 <div class="nav justify-content-end">
-                    <form action="/profile" method="POST">
+                    <form action="/api/get-posts" method="POST">
                         @csrf
                         <li id="searchInNav">
                             <div class="form-inline">
