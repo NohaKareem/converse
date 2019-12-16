@@ -98,18 +98,14 @@
     
     <script>
     
-    function liveSearch(e) {
-            console.log("in live search");
-            var searchStr = e.currentTarget.value;
-            console.log(searchStr);
-
-            // POST method to send search query
-            axios.post('/api/get-posts/?searchStr=' + searchStr)
-                .then(
-                    function(response) { 
-                        const searchResults = response.data;
-                        console.log(searchResults);
-                        const postsCon = document.querySelector('#searchPostsCon');
+    function liveSearch(e){
+        var searchStr = e.currentTarget.value;
+        fetch('/api/get-posts/?searchStr='  + searchStr)
+			.then(function(response){
+				return response.json();
+			})
+			.then(function(searchResults){
+                const postsCon = document.querySelector('#searchPostsCon');
                         postsCon.innerHTML = ''; 
                         
                         for(let i = 0; i < searchResults.length; i++) {
@@ -118,18 +114,48 @@
                             const postItem  = 
                             '<a href="/posts/' + searchResults[i]['id'] + '">' +
                                 '<div>' + 
-                                    '<div class="searchResultImage" style="background:url(' + searchResults[i]['image'] + ')"></div>' +
+                                    '<div class="searchResultImage" style="background:url(' + searchResults[i]['imageUri'] + ')"></div>' +
                                         '<p>' + searchResults[i]['title'] + '</p>' +
                                 '</div>' + 
                             '</a>';
                             postsCon.innerHTML += postItem;
                         }
-                }).catch(function(error) {
-                    console.log(error);
-            });
-        }
-        // var searchBar = document.querySelector("#navSearchBar");
-        // searchBar.onkeyup = liveSearch;
+			})
+		.catch(function(err){
+			console.log(err);
+		});
+    }
+
+    // function liveSearchAxios(e) {
+    //         var searchStr = e.currentTarget.value;
+    //         console.log(searchStr);
+
+    //         // POST method to send search query
+    //         axios.post('/api/get-posts/?searchStr=' + searchStr)
+    //             .then(
+    //                 function(response) { 
+    //                     console.log(response);
+    //                     const searchResults = response.data;
+    //                     console.log(searchResults);
+    //                     const postsCon = document.querySelector('#searchPostsCon');
+    //                     postsCon.innerHTML = ''; 
+                        
+    //                     for(let i = 0; i < searchResults.length; i++) {
+    //                         console.log("image")
+    //                         console.log(searchResults[i]['image'])
+    //                         const postItem  = 
+    //                         '<a href="/posts/' + searchResults[i]['id'] + '">' +
+    //                             '<div>' + 
+    //                                 '<div class="searchResultImage" style="background:url(' + searchResults[i]['imageUri'] + ')"></div>' +
+    //                                     '<p>' + searchResults[i]['title'] + '</p>' +
+    //                             '</div>' + 
+    //                         '</a>';
+    //                         postsCon.innerHTML += postItem;
+    //                     }
+    //             }).catch(function(error) {
+    //                 console.log(error);
+    //         });
+    //     }
 
     </script>
 
