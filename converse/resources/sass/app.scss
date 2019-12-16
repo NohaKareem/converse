@@ -148,8 +148,18 @@ $mintGreen: #00ffd5;
     color: $blue !important;
 }
 
+.btn-outline-success {
+    border-color: $mintGreen !important;
+    color: $mintGreen !important;
+}
+
 .btn-outline-primary:hover {
     background-color: $blue !important;
+    color: white !important;
+}
+
+.btn-outline-success:hover {
+    background-color: $mintGreen !important;
     color: white !important;
 }
 
@@ -159,4 +169,17 @@ a {
 
 a:hover {
     color: $blue;
+} 
+
+.inlineButton {
+    display: inline !important;
+}
+
+.commentSection {
+    border-top: 3px solid $mintGreen;
+    margin-top: $spacing * 2;
+
+    h2, h3 {
+        margin-top: $spacing;
+    }
 }

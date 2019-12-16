@@ -11501,8 +11501,18 @@ a.text-dark:focus {
   color: #5500ff !important;
 }
 
+.btn-outline-success {
+  border-color: #00ffd5 !important;
+  color: #00ffd5 !important;
+}
+
 .btn-outline-primary:hover {
   background-color: #5500ff !important;
+  color: white !important;
+}
+
+.btn-outline-success:hover {
+  background-color: #00ffd5 !important;
   color: white !important;
 }
 
@@ -11512,5 +11522,19 @@ a {
 
 a:hover {
   color: #5500ff;
+}
+
+.inlineButton {
+  display: inline !important;
+}
+
+.commentSection {
+  border-top: 3px solid #00ffd5;
+  margin-top: 20px;
+}
+
+.commentSection h2,
+.commentSection h3 {
+  margin-top: 10px;
 }
 
