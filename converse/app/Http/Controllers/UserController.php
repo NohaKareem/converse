@@ -24,7 +24,7 @@ class UserController extends Controller {
 
     /**
      * Display the specified user.
-     * ~User sent to view as an array of Users, to utilize the same blade file used for search results, for more DRY code.
+     * User sent to view as an array of Users, to utilize the same blade file used for search results, for more DRY code.
      * @param  \App\User $user
      * @return \Illuminate\Http\Response
      */

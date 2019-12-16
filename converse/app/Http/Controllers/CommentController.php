@@ -20,7 +20,7 @@ class CommentController extends Controller {
         $validator =  Validator::make($request->all(), [
             'commentText' => 'required|max:255' 
           ]);
-        // ~stay in page to show errors if any
+        // stay in page to show errors if any
         if ($validator->fails()) {  
             return redirect('/')->withInput()->withErrors($validator);
         }
@@ -41,7 +41,7 @@ class CommentController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function destroy(Comment $comment) {
-        // ~check current user is authorized to delete
+        // check current user is authorized to delete
         if (auth()->id() == $comment->user_id) {
             // redirect to main page
             $comment->delete();

@@ -29,24 +29,6 @@ $mintGreen: #00ffd5;
     }
 }
 
-#feedView {
-    margin-top: $spacing;
-}
-
-// ~
-#messageView {
-    background-color: blue;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    padding: $spacing;
-}
-
-#friendsView {
-    background-color: green;
-    margin-top: $spacing;
-}
-
 #searchCon {
     text-align: center;
 }

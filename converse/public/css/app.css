@@ -11374,26 +11374,6 @@ a.text-dark:focus {
   margin-left: 10px;
 }
 
-#feedView {
-  margin-top: 10px;
-}
-
-#messageView {
-  background-color: blue;
-  display: -webkit-box;
-  display: flex;
-  -webkit-box-pack: start;
-          justify-content: flex-start;
-  -webkit-box-align: center;
-          align-items: center;
-  padding: 10px;
-}
-
-#friendsView {
-  background-color: green;
-  margin-top: 10px;
-}
-
 #searchCon {
   text-align: center;
 }
