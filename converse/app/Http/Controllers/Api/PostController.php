@@ -22,6 +22,4 @@ class PostController extends Controller {
         $posts = Post::where('text', 'LIKE', "%{$request->searchStr}%")->get();
         return response()->json($posts, 200); 
     }
-
-    
 }

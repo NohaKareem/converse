@@ -49463,8 +49463,8 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
   function loadPosts() {
     axios.get('/api/get-posts').then(function (response) {
-      var searchResults = response.data; // console.log(searchResults);
-      // console.log(response);
+      var searchResults = response.data;
+      console.log(searchResults); // console.log(response);
 
       var postsCon = document.querySelector('#displayPostsCon');
       postsCon.innerHTML = '<div class="postsCon">';

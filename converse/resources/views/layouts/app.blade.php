@@ -31,7 +31,7 @@
                 <!-- search feature -->
                 <!-- bootstrap navbar search styling https://getbootstrap.com/docs/4.0/components/navbar/ -->
                 <div class="nav justify-content-end">
-                    <form action="/api/get-posts" method="POST">
+                    <form action="/api/find-posts" method="GET">
                         @csrf
                         <li id="searchInNav">
                             <div class="form-inline">
@@ -101,7 +101,7 @@
     // live search using fetch API
     function liveSearch(e){
         var searchStr = e.currentTarget.value;
-        fetch('/api/get-posts/?searchStr=' + searchStr)
+        fetch('/api/find-posts/?searchStr=' + searchStr)
 			.then(function(response){
 				return response.json();
 			})

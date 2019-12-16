@@ -14,7 +14,7 @@ require('./bootstrap');
         axios.get('/api/get-posts')
             .then(function(response) { 
                 const searchResults = response.data;
-                // console.log(searchResults);
+                console.log(searchResults);
                 // console.log(response);
                 const postsCon = document.querySelector('#displayPostsCon');
                 postsCon.innerHTML = '<div class="postsCon">'; 
