@@ -99,8 +99,8 @@ $mintGreen: #00ffd5;
     box-shadow: 2px 2px 2px 1px rgba(200, 200, 200, 0.5);
 
     .postImage {
-        height: 150px !important;
-        width: 150px !important;
+        max-height: 150px !important;
+        max-width: 150px !important;
         border-radius: 5px;
         border-top-left-radius: 50%;
         // border-top-right-radius: 40px;
@@ -122,8 +122,8 @@ $mintGreen: #00ffd5;
     grid-template-columns: repeat(4, minmax(0, 1fr));
     grid-column-gap: $spacing;
     .searchResultImage {
-        height: 100px !important;
-        width: 100px !important;
+        max-height: 100px !important;
+        max-width: 100px !important;
         border-radius: 50%;
         
         background-size: cover !important;

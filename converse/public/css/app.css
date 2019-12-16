@@ -11449,8 +11449,8 @@ a.text-dark:focus {
 
 .post .postImage,
 .userCon .postImage {
-  height: 150px !important;
-  width: 150px !important;
+  max-height: 150px !important;
+  max-width: 150px !important;
   border-radius: 5px;
   border-top-left-radius: 50%;
   background-size: cover !important;
@@ -11471,8 +11471,8 @@ a.text-dark:focus {
 }
 
 #searchPostsCon .searchResultImage {
-  height: 100px !important;
-  width: 100px !important;
+  max-height: 100px !important;
+  max-width: 100px !important;
   border-radius: 50%;
   background-size: cover !important;
   background-position: center !important;
