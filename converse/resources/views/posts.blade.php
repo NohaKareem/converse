@@ -9,7 +9,7 @@
             @foreach(App\Post::all() as $post)
                 <div class="post">
                     <!-- <img class="postImg" src="{{ $post->image }}"> -->
-                    <h1 class="postTitle">{{ $post->title }} </h1>
+                    <a href="/posts/{{ $post->id }}"><h1 class="postTitle">{{ $post->title }} </h1></a>
                     <p class="postText">{{ $post->text }} </p>
                 </div>
             @endforeach

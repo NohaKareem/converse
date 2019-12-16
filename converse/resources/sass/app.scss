@@ -82,3 +82,7 @@ $spacing: 10px;
         background-repeat: no-repeat !important;
     }
 }
+
+.actionButton, .postText, #commentBox {
+    margin-top: $spacing;
+}

@@ -27,7 +27,7 @@ class PostController extends Controller {
 
     /**
      * Store a newly created post record in storage.
-     * required, as checked by the Validator facade.
+     * Required fields are checked by the Validator facade.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
@@ -77,7 +77,7 @@ class PostController extends Controller {
      */
     public function destroy(Post $post) {
         // ~check current user is authorized to delete
-        if (auth()->id == $post.user_id) {
+        if (auth()->id() == $post->user_id) {
             // redirect to main page
             $post->delete();
             return redirect('/posts');

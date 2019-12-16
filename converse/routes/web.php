@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('auth.login');
+    return view('users');
 });
 
 Auth::routes();
@@ -24,22 +24,15 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/users', 'UserController@index'); // show all users
 Route::get('/users/{user}', 'UserController@show'); // show user profile
 
-// Route::get('/users/{user}/posts', 'PostController@index'); // show all posts for a user
-// Route::get('/users/{user}/posts/{post}', 'PostController@show'); // show post for a user
+// Posts
+Route::get('posts', 'PostController@index'); // show post for a user
+Route::get('/posts/{post}', 'PostController@show'); // show post for a user
+Route::post("/posts", "PostController@store")->name("post.create"); // make post 
+Route::delete("/posts/{post}", "PostController@destroy");
+Route::get("/post_form", function () {
+    return view("post_form");
+});
 
-// if (Auth::check()) {
-    Route::get('posts', 'PostController@index'); // show post for a user
-    Route::get('/posts/{post}', 'PostController@show'); // show post for a user
-    Route::post("/posts", "PostController@store")->name("post.create"); // make post 
-    
-    // edit + destroy
-    Route::get("/posts/{post}/edit", "PostController@edit"); 
-    Route::patch("/posts/{post}", "PostController@update");
-    Route::delete("/posts/{post}", "PostController@destroy");
-        
-    Route::get("/post_form", function () {
-        return view("post_form");
-    });
-// } else {
-    // Route::get('/home', 'HomeController@index')->name('home');
-// }
+// Comments   
+Route::post('/comments', "CommentController@store")->name("comment.create"); // make comment
+Route::delete('/comments/{comment}', "CommentController@destroy"); // delete comment
