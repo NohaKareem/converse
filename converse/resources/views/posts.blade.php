@@ -7,20 +7,18 @@
         </button>
     </form>
     
+    <p id="searchPostsCon"></p>
+
     <!-- Display all posts -->
     <div id="container"> 
         <div id="postsCon">
-            @foreach(App\Post::all() as $post) 
-                <div class="post">
-                    <img class="postImg" src="{{ $post->image }}">
+            <!-- @foreach(App\Post::all() as $post) -->
+                <div class="post" style="background:url({{ $post->image }})">
+                    <!-- <img class="postImg" src="{{ $post->image }}"> -->
                     <h1 class="postTitle">{{ $post->title }} </h1>
                     <p class="postText">{{ $post->text }} </p>
                 </div>
-            @endforeach
-        </div>
-
-        <p id="searchPostsCon">
-            Hello
-        </p>
+            <!-- @endforeach -->
+        </div>  
     </div>
 @endsection

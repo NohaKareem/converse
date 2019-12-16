@@ -38,6 +38,10 @@ $spacing: 10px;
     }
 }
 
+#searchPostsCon {
+    margin-top: -50px;
+}
+
 @media screen and (min-width: 768px) {
     #feedView {
         display: grid;
@@ -58,5 +62,22 @@ $spacing: 10px;
     margin: $spacing;
     .post {
         background-color: white;
+    }
+}
+
+#searchPostsCon {
+    margin-left: $spacing * 2;
+
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    .searchResultImage {
+        height: 100px !important;
+        width: 100px !important;
+        border-radius: 50%;
+        
+        background-size: cover !important;
+        background-position: center !important;
+        background-repeat: no-repeat !important;
     }
 }

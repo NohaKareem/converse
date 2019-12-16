@@ -49457,20 +49457,29 @@ module.exports = function(module) {
  */
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
+var searchBar = document.querySelector("#search");
+
+function liveSearch(e) {
+  console.log("in live search");
+  console.log(e);
+} // display posts ~
+
+
 axios.get('/api/get-posts').then(function (response) {
   var searchResults = response.data;
-  console.log("in axios");
   console.log(searchResults);
   var postsCon = document.querySelector('#searchPostsCon');
   postsCon.innerHTML = '';
 
   for (var i = 0; i < searchResults.length; i++) {
-    var item = '<div>' + '<div class="searchResultImage" style="background:url(' + searchResults[i]['imageUri'] + ')"></div>' + '<h4>' + searchResults[i]['title'] + '</h4>' + '</div>';
+    var item = '<div>' + '<div class="searchResultImage" style="background:url(' + searchResults[i]['imageUri'] + ')"></div>' + '<p>' + searchResults[i]['title'] + '</p>' + '</div>';
     postsCon.innerHTML += item;
   }
 })["catch"](function (error) {
   alert(error);
-});
+}); // add key up event listener for live search results
+
+searchBar.addEventListener("keyup", liveSearch, false);
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 /**
  * The following block of code may be used to automatically register your

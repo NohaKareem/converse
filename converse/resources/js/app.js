@@ -6,27 +6,35 @@
 
 require('./bootstrap');
 
-axios.get('/api/get-posts')
-    .then(function(response){
-        const searchResults = response.data;
-        console.log("in axios");
-        console.log(searchResults);
-        const postsCon = document.querySelector('#searchPostsCon');
-        postsCon.innerHTML = ''; 
+var searchBar = document.querySelector("#search");
 
-        for(let i = 0; i < searchResults.length; i++) {
-            const item  = 
-            '<div>' + 
-                '<div class="searchResultImage" style="background:url(' + searchResults[i]['imageUri'] + ')"></div>' +
-                    '<h4>' + searchResults[i]['title'] + '</h4>' +
-            '</div>';
+function liveSearch(e) {
+    console.log("in live search");
+    console.log(e);
+}
+    // display posts ~
+    axios.get('/api/get-posts')
+        .then(function(response){
+            const searchResults = response.data;
+            console.log(searchResults);
+            const postsCon = document.querySelector('#searchPostsCon');
+            postsCon.innerHTML = ''; 
 
-            postsCon.innerHTML += item;
-        }
-    }).catch(function(error) {
-        alert(error);
+            for(let i = 0; i < searchResults.length; i++) {
+                const item  = 
+                '<div>' + 
+                    '<div class="searchResultImage" style="background:url(' + searchResults[i]['imageUri'] + ')"></div>' +
+                        '<p>' + searchResults[i]['title'] + '</p>' +
+                '</div>';
+                postsCon.innerHTML += item;
+            }
+        }).catch(function(error) {
+            alert(error);
     });
-    
+
+// add key up event listener for live search results
+searchBar.addEventListener("keyup", liveSearch, false);
+
 window.Vue = require('vue');
 
 /**

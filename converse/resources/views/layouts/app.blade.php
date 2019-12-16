@@ -28,6 +28,23 @@
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Converse') }}
                 </a>
+
+                <!-- search feature -->
+                <!-- bootstrap navbar search styling https://getbootstrap.com/docs/4.0/components/navbar/ -->
+                <div class="nav justify-content-end">
+                    <form action="/profile" method="POST">
+                        @csrf
+                        <li id="searchInNav">
+                            <div class="form-inline">
+                                <label for="search" class="control-label sr-only"></label>
+                                <input type="text" name="search" id="search" class="form-control mr-sm-2" placeholder="Search for post topic">
+                                <!-- <button class="btn btn-success" type="submit">search</button> --> 
+                                <!-- ~ -->
+                            </div>
+                        </li>
+                    </form>
+                </div>
+
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
