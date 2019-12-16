@@ -18,7 +18,8 @@ class PostController extends Controller {
     }
 
     public function find(Request $request) {
-        $posts = Post::where('text', 'LIKE', "% {{ $request->searchStr }} %")->get();
+        // $posts = Post::where('title', $request->searchStr)->get();
+        $posts = Post::where('text', 'LIKE', "%{$request->searchStr}%")->get();
         return response()->json($posts, 200); 
     }
 

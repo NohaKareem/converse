@@ -110,8 +110,6 @@
                 postsCon.innerHTML = ''; 
                 
                 for(let i = 0; i < searchResults.length; i++) {
-                    console.log("image")
-                    console.log(searchResults[i]['image'])
                     const postItem  = 
                     '<a href="/posts/' + searchResults[i]['id'] + '">' +
                         '<div>' + 
