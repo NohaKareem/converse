@@ -11,7 +11,9 @@ class UserSeeder extends Seeder
      */
     private $users = [
         ['first_name' => 'John', 'last_name' => 'Doe', 'email' => 'johndoe@example.com', 'mobile_number' => '12345678975', 'password' => '12345678'],
-        ['first_name' => 'Jane', 'last_name' => 'Doe', 'email' => 'janedoe@example.com', 'mobile_number' => '12345678976', 'password' => '12345678']
+        ['first_name' => 'Jane', 'last_name' => 'Doe', 'email' => 'janedoe@example.com', 'mobile_number' => '12345678976', 'password' => '12345678'],
+        ['first_name' => 'Alice', 'last_name' => 'Doe', 'email' => 'alicedoe@example.com', 'mobile_number' => '12345678976', 'password' => '12345678'],
+        ['first_name' => 'Bob', 'last_name' => 'Tim', 'email' => 'bobtim@example.com', 'mobile_number' => '12345678976', 'password' => '12345678']
     ];
 
     /**
