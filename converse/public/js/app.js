@@ -49466,7 +49466,7 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
       var searchResults = response.data; // console.log(searchResults);
       // console.log(response);
 
-      var postsCon = document.querySelector('#searchPostsCon');
+      var postsCon = document.querySelector('#displayPostsCon');
       postsCon.innerHTML = '<div class="postsCon">';
 
       for (var i = 0; i < searchResults.length; i++) {

@@ -16,7 +16,7 @@ require('./bootstrap');
                 const searchResults = response.data;
                 // console.log(searchResults);
                 // console.log(response);
-                const postsCon = document.querySelector('#searchPostsCon');
+                const postsCon = document.querySelector('#displayPostsCon');
                 postsCon.innerHTML = '<div class="postsCon">'; 
 
                 for(let i = 0; i < searchResults.length; i++) {

@@ -11442,7 +11442,8 @@ a.text-dark:focus {
   margin: 0 auto;
 }
 
-#searchPostsCon {
+#searchPostsCon,
+#displayPostsCon {
   margin-top: -10px;
   margin-left: 20px;
   display: grid;
@@ -11450,7 +11451,8 @@ a.text-dark:focus {
   grid-column-gap: 10px;
 }
 
-#searchPostsCon .searchResultImage {
+#searchPostsCon .searchResultImage,
+#displayPostsCon .searchResultImage {
   height: 100px !important;
   width: 100px !important;
   border-radius: 50%;
