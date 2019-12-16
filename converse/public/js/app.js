@@ -49476,7 +49476,7 @@ axios.get('/api/get-posts').then(function (response) {
     postsCon.innerHTML += item;
   }
 })["catch"](function (error) {
-  alert(error);
+  console.log(error);
 }); // add key up event listener for live search results
 
 searchBar.addEventListener("keyup", liveSearch, false);

@@ -18,11 +18,10 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/index', 'UserController@index')->name('index');
-// Route::get('/', 'HomeController@index')->name('home');
 Route::get('/home', 'HomeController@index')->name('home');
 
 //~
-Route::get('/users', 'UserController@index'); // show all users (friends list~)
+Route::get('/users', 'UserController@index'); // show all users
 Route::get('/users/{user}', 'UserController@show'); // show user profile
 
 // Route::get('/users/{user}/posts', 'PostController@index'); // show all posts for a user
@@ -37,8 +36,7 @@ Route::get('/users/{user}', 'UserController@show'); // show user profile
     Route::get("/posts/{post}/edit", "PostController@edit"); 
     Route::patch("/posts/{post}", "PostController@update");
     Route::delete("/posts/{post}", "PostController@destroy");
-    
-    
+        
     Route::get("/post_form", function () {
         return view("post_form");
     });

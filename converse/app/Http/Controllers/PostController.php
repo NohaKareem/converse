@@ -9,6 +9,11 @@ use Illuminate\Support\Facades\Storage;
 
 class PostController extends Controller {
     
+    // restrict access to entire controller to logged in users only
+    public function __construct() {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of posts.
      *

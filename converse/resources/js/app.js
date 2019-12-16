@@ -29,7 +29,7 @@ function liveSearch(e) {
                 postsCon.innerHTML += item;
             }
         }).catch(function(error) {
-            alert(error);
+            console.log(error);
     });
 
 // add key up event listener for live search results

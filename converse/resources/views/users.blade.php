@@ -5,8 +5,6 @@
     <div id="container"> 
             @foreach(App\User::all() as $user) 
                 <div class="col-md-3 userCon"> 
-                    <!-- ~ -->
-                    <!-- <img src="{{ asset('images/'.$user->avatar_name.'-th.png') }}" alt="{{$user->first_name.' '.$user->last_name.'\'s thumbnail'}}"> -->
                     <div class="userInfo">
                         <p class="userName">{{ $user->first_name.' '.$user->last_name }} </p>
                         <p>{{ $user->email }} </p>
@@ -17,5 +15,11 @@
                     </div>
                 </div>
             @endforeach
+
+            <form action="/posts" method="GET" class="col-md-2">
+                <button type="submit" class="btn btn-outline-primary btn-block">
+                    View All Posts
+                </button>
+          </form>
         </div>
 @endsection
